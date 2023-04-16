@@ -81,7 +81,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"full_name\": \"Lapis\",\n    \"email\": \"lapis@gmail.com\",\n    \"password\": \"Magic Knight Water\"\n}\n",
+					"raw": "{\n    \"user_id\": 1,\n    \"res_id\": 1\n}\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -89,14 +89,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/api/user/create-user",
+					"raw": "{{url}}/api/like/create-like-by-user",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
-						"user",
-						"create-user"
+						"like",
+						"create-like-by-user"
 					]
 				}
 			},
