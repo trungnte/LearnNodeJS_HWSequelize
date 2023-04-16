@@ -1,10 +1,17 @@
-const User = require('../Models/user');
+
 const { successCode, failedCode, errorCode} = require('../ultils/response');
+
+const initModels = require('../Models/init-models');
+const sequelize = require('../Models/index');
+const models = initModels(sequelize);
 
 // get user
 const getUser = async (req, res) => {
     try {
-        let data = await User.findAll();
+        // let data = await models.user.findAll();
+        let data = await models.user.findAll({
+            include: ["food_id_foods"]
+        });
         successCode(res, "Get user ok", data);
     } catch (error) {
         errorCode(res, "Get user failed!");
@@ -14,9 +21,9 @@ const getUser = async (req, res) => {
 // create user
 const createUser = async (req, res) => {
     try {
-        let { userId, fullName, email, password} = req.body;
-        let newUser = { userId, fullName, email, password };
-        let data = await User.create(newUser);
+        let { user_id, full_name, email, pass_word} = req.body;
+        let newUser = { user_id, full_name, email, pass_word };
+        let data = await models.user.create(newUser);
         successCode(res, "Create user success", data);
     } catch (error) {
         console.log("Create new user failed err: ", error);
@@ -27,11 +34,11 @@ const createUser = async (req, res) => {
 // create user
 const updateUser = async (req, res) => {
     try {
-        let { userId, fullName, email, password} = req.body;
-        let updateUser = { fullName, email, password};
-        let result = await User.update(updateUser, {
+        let { user_id, full_name, email, pass_word} = req.body;
+        let updateUser = { full_name, email, pass_word};
+        let result = await models.user.update(updateUser, {
             where: {
-                userId
+                user_id
             }
         });
 
@@ -45,10 +52,10 @@ const updateUser = async (req, res) => {
 // create user
 const deleteUser = async (req, res) => {
     try {
-        let { userId } = req.body;
-        let result = await User.destroy({
+        let { user_id } = req.body;
+        let result = await models.user.destroy({
             where: {
-                userId
+                user_id
             }
         });
         successCode(res, "Delete user ok", result);

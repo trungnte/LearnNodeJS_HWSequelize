@@ -15,3 +15,5 @@ const sequelize = new Sequelize(config.db_database, config.db_user, config.db_pa
 // }
 
 module.exports = sequelize;
+
+// sequelize-auto -o "./src/Models" -d db_food -h localhost -u root -p 3306 -x abc1234 -l es6 -e mysql

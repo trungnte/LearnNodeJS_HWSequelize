@@ -1,32 +1,36 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return user.init(sequelize, DataTypes);
+  return sub_food.init(sequelize, DataTypes);
 }
 
-class user extends Sequelize.Model {
+class sub_food extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   return super.init({
-    user_id: {
+    sub_id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    full_name: {
+    sub_name: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    email: {
-      type: DataTypes.STRING(255),
+    sub_price: {
+      type: DataTypes.INTEGER,
       allowNull: true
     },
-    pass_word: {
-      type: DataTypes.STRING(255),
-      allowNull: true
+    food_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'food',
+        key: 'food_id'
+      }
     }
   }, {
     sequelize,
-    tableName: 'user',
+    tableName: 'sub_food',
     timestamps: false,
     indexes: [
       {
@@ -34,7 +38,14 @@ class user extends Sequelize.Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "user_id" },
+          { name: "sub_id" },
+        ]
+      },
+      {
+        name: "food_id",
+        using: "BTREE",
+        fields: [
+          { name: "food_id" },
         ]
       },
     ]
