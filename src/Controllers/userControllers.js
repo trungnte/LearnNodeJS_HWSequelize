@@ -8,10 +8,10 @@ const models = initModels(sequelize);
 // get user
 const getUser = async (req, res) => {
     try {
-        // let data = await models.user.findAll();
-        let data = await models.user.findAll({
-            include: ["food_id_foods"]
-        });
+        let data = await models.user.findAll();
+        // let data = await models.user.findAll({
+        //     include: ["food_id_foods"]
+        // });
         successCode(res, "Get user ok", data);
     } catch (error) {
         errorCode(res, "Get user failed!");
@@ -49,7 +49,7 @@ const updateUser = async (req, res) => {
     }
 }
 
-// create user
+// delete user
 const deleteUser = async (req, res) => {
     try {
         let { user_id } = req.body;
