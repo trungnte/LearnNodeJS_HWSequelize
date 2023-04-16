@@ -1,32 +1,32 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return user.init(sequelize, DataTypes);
+  return restaurant.init(sequelize, DataTypes);
 }
 
-class user extends Sequelize.Model {
+class restaurant extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   return super.init({
-    user_id: {
+    res_id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    full_name: {
+    res_name: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    email: {
+    image: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    pass_word: {
+    desc: {
       type: DataTypes.STRING(255),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'user',
+    tableName: 'restaurant',
     timestamps: false,
     indexes: [
       {
@@ -34,7 +34,7 @@ class user extends Sequelize.Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "user_id" },
+          { name: "res_id" },
         ]
       },
     ]
