@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "242b512e-92ff-4263-aa40-bff47641fc04",
+		"name": "LearnNodeJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1427337"
+	},
+	"item": [
+		{
+			"name": "HealthCheck Server",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/user/get-user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/user/get-user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"get-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/user/update-user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 15,\n    \"full_name\": \"Leo\",\n    \"email\": \"leo@gmail.com\",\n    \"pass_word\": \"Dragon Knight Wind\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/user/update-user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"update-user"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/like/create-like-by-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"full_name\": \"Lapis\",\n    \"email\": \"lapis@gmail.com\",\n    \"password\": \"Magic Knight Water\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/user/create-user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"create-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/user/delete-user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/user/delete-user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"delete-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/like/get-like-by-res",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"res_id\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/like/get-like-by-res",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"like",
+						"get-like-by-res"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/like/get-like-by-user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/like/get-like-by-user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"like",
+						"get-like-by-user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
