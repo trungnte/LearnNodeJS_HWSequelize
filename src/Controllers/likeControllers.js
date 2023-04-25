@@ -92,15 +92,16 @@ const updateLikeByUser = async (req, res) => {
 // delete like by restaurant
 const deleteLikeByUser = async (req, res) => {
     try {
-        let { user_id } = req.body;
-        let result = await models.user.destroy({
+        let { user_id, res_id } = req.body;
+        let result = await models.like_res.destroy({
             where: {
-                user_id
+                user_id,
+                res_id
             }
         });
-        successCode(res, "Delete user ok", result);
+        successCode(res, "Delete like_res ok", result);
     } catch (error) {
-        errorCode(res, "Delete user failed!");
+        errorCode(res, "Delete like_res failed!");
     }
 }
 
