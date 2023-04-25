@@ -415,6 +415,109 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "ORDER create-order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1, \n    \"food_id\": 3, \n    \"amount\": 2, \n    \"code\": \"ABC\", \n    \"arr_sub_id\": \"[1,2]\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/order/create-order",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"order",
+						"create-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ORDER get-order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/order/get-order",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"order",
+						"get-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ORDER update-order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1, \n    \"food_id\": 3, \n    \"amount\": 3, \n    \"code\": \"ABCDEF\", \n    \"arr_sub_id\": \"[1,2]\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/order/update-order",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"order",
+						"update-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ORDER delete-order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1, \n    \"food_id\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/order/delete-order",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"order",
+						"delete-order"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
