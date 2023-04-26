@@ -11,5 +11,4 @@ rootRouter.use("/like", likeRouter);
 rootRouter.use("/rate", rateRouter);
 rootRouter.use("/order", orderRouter);
 
-
 module.exports = rootRouter;
